@@ -4,7 +4,10 @@ Test script for UE5 Update Monitor pattern matching
 """
 
 import sys
-sys.path.insert(0, '/home/runner/work/Ue5TGUpdate/Ue5TGUpdate')
+import os
+
+# Add the current directory to the path for imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from ue5_monitor import UE5UpdateMonitor
 

@@ -165,8 +165,7 @@ class UE5UpdateMonitor:
         # Check for UE/Unreal Engine mention (including UE5.x format)
         has_ue_mention = bool(re.search(r'\b(?:UE\s*\d*|Unreal\s+Engine)\b', text, re.IGNORECASE))
         
-        # Match if: (has version AND UE mention) OR (has version AND UE mention AND keywords)
-        # This ensures we only match Unreal Engine related updates
+        # Match if: has version AND UE mention
         return has_version and has_ue_mention
     
     async def notify_update(self, message: Message):
@@ -191,7 +190,7 @@ Channel: {self.channel}
 Message ID: {message.id}
 
 Message Preview:
-{message.text[:200]}...
+{message.text[:200] + ('...' if len(message.text) > 200 else '')}
 
 """
         print(notification)
