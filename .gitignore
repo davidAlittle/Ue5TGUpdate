@@ -205,3 +205,10 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Telethon session files
+*.session
+*.session-journal
+
+# Download directory
+downloads/
